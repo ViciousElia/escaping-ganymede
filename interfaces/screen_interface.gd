@@ -4,9 +4,11 @@ extends PanelContainer
 var navigation_map
 var side_panel
 
+var flags : Array[String]
+
 func _ready() -> void:
 	navigation_map = $MarginAllowance/MainSplit/Control
-	side_panel = $MarginAllowance/MainSplit/LeftSplit/MenuSplit/Control
+	side_panel = $MarginAllowance/MainSplit/LeftSplit/MenuSplit/NavigationMap
 func _process(_delta: float) -> void:
 	pass
 

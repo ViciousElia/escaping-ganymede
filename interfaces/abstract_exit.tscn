@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw1bygeq75clt"]
+
+[ext_resource type="Script" uid="uid://obbftcavva08" path="res://interfaces/abstract_exit.gd" id="1_xuoch"]
+
+[node name="AbstractExit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_xuoch")
+
+[connection signal="gui_input" from="." to="." method="_on_click"]

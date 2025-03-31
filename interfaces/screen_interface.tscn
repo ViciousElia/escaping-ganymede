@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2c2wft1bvg6t"]
+[gd_scene load_steps=3 format=3 uid="uid://2c2wft1bvg6t"]
 
 [ext_resource type="Script" uid="uid://cerxqualk3c43" path="res://interfaces/screen_interface.gd" id="1_8mo7j"]
+[ext_resource type="PackedScene" uid="uid://dkoobwcotbio2" path="res://interfaces/navigation_map.tscn" id="2_5k30o"]
 
 [node name="ScreenInterface" type="PanelContainer"]
 custom_minimum_size = Vector2(640, 480)
@@ -34,9 +35,10 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 dragging_enabled = false
 
-[node name="Control" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit"]
-custom_minimum_size = Vector2(120, 0)
+[node name="NavigationMap" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit" instance=ExtResource("2_5k30o")]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
+size_flags_horizontal = 1
 
 [node name="Control2" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit"]
 layout_mode = 2
