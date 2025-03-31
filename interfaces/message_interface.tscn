@@ -13,5 +13,3 @@ script = ExtResource("1_v4ie7")
 [node name="RichText" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-scroll_active = false
-scroll_following = true

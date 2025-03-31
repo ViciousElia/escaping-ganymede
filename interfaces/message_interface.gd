@@ -8,7 +8,6 @@ var delay : int = 0
 var queued : bool = false
 var active : bool = false
 var waited : bool = false
-var inTag : bool = false
 var blinker : String = ""
 var current_message : int = -1
 var message_progress : int = -1
@@ -16,6 +15,7 @@ var message_progress : int = -1
 var adhoc_timer : int = -1
 
 const BLINK : int = 500
+const PAUSE : int = 750
 
 func _ready() : pass
 func _process(delta: float) :
@@ -29,7 +29,27 @@ func _process(delta: float) :
 		if active :
 			var nextChar : bool = false
 			var nextChunk : String = ""
-			if delay == 0 : nextChar = true
+			if delay == 0 :
+				if message_history[current_message][message_progress] != "[" :
+					nextChunk = message_history[current_message][message_progress]
+					message_progress += 1
+					if message_progress >= message_history[current_message].length() : waited = true
+				else :
+					if message_history[current_message][message_progress+1] != "[" :
+						pass # TODO : read tag as substring
+					else :
+						var commandText = "" # TODO : read command as substring
+						
+						match commandText:
+							"[[pause]]":
+								message_progress += 9
+								delay = PAUSE
+								return
+							"[[wait]]":
+								message_progress += 8
+								waited = true
+								return
+				nextChar = true
 			elif delay < 0 :
 				nextChar = true
 				pass # TODO : figure out how to advance text until it's full
@@ -37,10 +57,19 @@ func _process(delta: float) :
 				if adhoc_timer <= 0 :
 					nextChar = true
 					adhoc_timer = delay
-					pass # TODO : figure out how to read commands and tags from text.
-			pass # TODO : identify when the buffer is full
-		else :
-			if adhoc_timer <= 0 : active = true
+					if message_history[current_message][message_progress] != "[" :
+						nextChunk = message_history[current_message][message_progress]
+						message_progress += 1
+						if message_progress >= message_history[current_message].length() : waited = true
+					else :
+						if message_history[current_message][message_progress+1] != "[" :
+							pass # TODO : read tag as substring
+						else : pass # TODO : read command as substring
+				else : nextChar = false
+			if nextChar :
+				$RichText.text += nextChunk
+				pass # TODO : identify when the buffer is full
+		elif adhoc_timer <= 0 : active = true
 # else check queued ... if so, check active ... if so, do letter process
 #		letter process -> check timer, if <=0, next letter
 #		next letter -> check if command. check if bbcode tag. if neither, letter

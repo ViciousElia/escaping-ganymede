@@ -12,7 +12,7 @@ func _ready() -> void:
 	side_panel = $MarginAllowance/MainSplit/Control
 	navigation_map = $MarginAllowance/MainSplit/LeftSplit/MenuSplit/NavigationMap
 	menu_panel = $MarginAllowance/MainSplit/LeftSplit/MenuSplit
-	message_panel = $MarginAllowance/MainSplit/LeftSplit/Control2
+	message_panel = $MarginAllowance/MainSplit/LeftSplit/MessageInterface
 func _process(_delta: float) -> void:
 	pass
 
