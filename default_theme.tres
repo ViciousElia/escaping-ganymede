@@ -1,8 +1,12 @@
 [gd_resource type="Theme" format=3 uid="uid://bn26cd3acqn2o"]
 
 [resource]
+ItemList/font_sizes/font_size = 12
+Label/font_sizes/font_size = 12
+LineEdit/font_sizes/font_size = 12
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16
 MarginContainer/constants/margin_top = 16
 SplitContainer/constants/separation = 16
+TextEdit/font_sizes/font_size = 12
