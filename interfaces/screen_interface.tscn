@@ -23,6 +23,7 @@ dragging_enabled = false
 [node name="LeftSplit" type="VSplitContainer" parent="MarginAllowance/MainSplit"]
 layout_mode = 2
 size_flags_horizontal = 3
+dragging_enabled = false
 
 [node name="Control" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
 layout_mode = 2
@@ -31,6 +32,7 @@ size_flags_vertical = 3
 [node name="MenuSplit" type="HSplitContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+dragging_enabled = false
 
 [node name="Control" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit"]
 custom_minimum_size = Vector2(120, 0)
