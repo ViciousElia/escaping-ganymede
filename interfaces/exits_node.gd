@@ -7,4 +7,4 @@ var exit_flags : Array[String]
 @export var messages : Array[String]
 
 func _ready() : pass
-func _process(delta: float) : pass
+func _process(_delta: float) : pass

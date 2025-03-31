@@ -1,5 +1,11 @@
 class_name AbstractExit
 extends Control
+## A node intended to represent an exit in an abstract way.
+##
+## Not intended to be used in isolation. Requires a resource to be defined as
+## the exit design (which I'll do later)
+##
+## @experimental: This class is missing vital pieces (the ones that make it display)
 
 ## Emitted when the node is initialised. Reports where the node should live
 ## inside its parent. The [signal NavigationMap.resized] action will handle this
@@ -21,7 +27,7 @@ var up_left : Vector2
 var exit_node : ExitsNode
 
 func _ready() : pass
-func _process(delta: float) : pass
+func _process(_delta: float) : pass
 
 ## To be called when node is created. If not, the node will not function
 ## correctly.

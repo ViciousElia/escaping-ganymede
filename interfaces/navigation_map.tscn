@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkoobwcotbio2"]
+[gd_scene load_steps=3 format=3 uid="uid://dkoobwcotbio2"]
 
 [ext_resource type="Script" uid="uid://snd1ifmb4pyj" path="res://interfaces/navigation_map.gd" id="1_vptr8"]
+[ext_resource type="ButtonGroup" uid="uid://d12358eehbid3" path="res://interfaces/command_button_group.tres" id="2_ifxya"]
 
 [node name="NavigationMap" type="VBoxContainer"]
 anchors_preset = 15
@@ -12,9 +13,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_vptr8")
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="MoveCommand" type="CheckBox" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
+button_group = ExtResource("2_ifxya")
 text = "Move"
 
 [node name="AbstractMap" type="PanelContainer" parent="."]
