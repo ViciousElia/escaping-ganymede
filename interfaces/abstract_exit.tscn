@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dw1bygeq75clt"]
 
-[ext_resource type="Texture2D" uid="uid://f3xhgtqsqy7k" path="res://interfaces/exit_texture.svg" id="1_etrcn"]
+[ext_resource type="Texture2D" uid="uid://f3xhgtqsqy7k" path="res://themes/exit_texture.svg" id="1_etrcn"]
 [ext_resource type="Script" uid="uid://obbftcavva08" path="res://interfaces/abstract_exit.gd" id="1_xuoch"]
 
 [node name="AbstractExit" type="TextureRect"]
