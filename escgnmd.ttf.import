@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dhc3xeigmoel0"
-path="res://.godot/imported/agsfnt3.ttf-bf5b5705e8a2cf5682e6edc1cc776046.fontdata"
+path="res://.godot/imported/escgnmd.ttf-412823495d736cfdfd5e5514f03040dd.fontdata"
 
 [deps]
 
-source_file="res://agsfnt3.ttf"
-dest_files=["res://.godot/imported/agsfnt3.ttf-bf5b5705e8a2cf5682e6edc1cc776046.fontdata"]
+source_file="res://escgnmd.ttf"
+dest_files=["res://.godot/imported/escgnmd.ttf-412823495d736cfdfd5e5514f03040dd.fontdata"]
 
 [params]
 
