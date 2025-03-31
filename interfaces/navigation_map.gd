@@ -11,7 +11,9 @@ extends VBoxContainer
 var abstr_ext = load("res://interfaces/abstract_exit.tscn")
 
 ## Uniform exit size to be passed around as necessary. Used to assure that
-## [AbstractExit]s are positioned and sized correctly.
+## [AbstractExit]s are positioned and sized correctly. Default behaviour is for 
+## the exit texture to scale to the height and width defined here, ignoring
+## aspect ratio.
 const EXIT_SIZE = Vector2(16,16)
 
 ## Emitted when an [AbstractExit] is clicked. Serves as a pass-through event
@@ -33,8 +35,11 @@ func rebuild_map(exits : Control) :
 		newExit.custom_minimum_size = EXIT_SIZE
 		$AbstractMap.add_child(newExit)
 		newExit.connect("exit_clicked",pass_click)
+	_on_resized()
 
-func _on_resized() -> void:
+## Listener for resize events. Places the exits around the room. Also called on
+## rebuild so that the map is arranged nicely from room entry.
+func _on_resized():
 	var refSize = $AbstractMap.size
 	for child in $AbstractMap.get_children() :
 		child.position.x = child.up_left.x * refSize.x - EXIT_SIZE.x

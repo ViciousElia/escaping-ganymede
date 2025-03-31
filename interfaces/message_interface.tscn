@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bym4sc65ygybp"]
+
+[ext_resource type="Script" uid="uid://dx6wm51y350qs" path="res://interfaces/message_interface.gd" id="1_v4ie7"]
+
+[node name="MessageInterface" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v4ie7")
+
+[node name="RichText" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+scroll_following = true

@@ -31,6 +31,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="MenuSplit" type="HSplitContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
+visible = false
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 dragging_enabled = false
@@ -43,6 +44,10 @@ size_flags_horizontal = 1
 [node name="Control2" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Control2" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
 
 [node name="Control" type="PanelContainer" parent="MarginAllowance/MainSplit"]
 custom_minimum_size = Vector2(120, 0)

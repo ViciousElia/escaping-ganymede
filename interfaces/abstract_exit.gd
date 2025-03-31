@@ -1,11 +1,10 @@
 class_name AbstractExit
-extends Control
+extends TextureRect
 ## A node intended to represent an exit in an abstract way.
 ##
 ## Not intended to be used in isolation. Requires a resource to be defined as
-## the exit design (which I'll do later)
-##
-## @experimental: This class is missing vital pieces (the ones that make it display)
+## the exit design. Currently, I've used an SVG that defines a plain circle at
+## 90% brightness. Any design can be used, but this one is nostalgic for me.
 
 ## Emitted when the node is initialised. Reports where the node should live
 ## inside its parent. The [signal NavigationMap.resized] action will handle this
@@ -36,6 +35,11 @@ func initialise(node : ExitsNode) :
 	exit_node = node
 	position_set.emit(up_left,self)
 
+## This is the listener for click events. It fires for any gui event, but it
+## [color=red]only[/color] reacts if the event is a mouse click press event of the
+## left button. In addition, it reacts when the
+## [member InputEventMouseButton.pressed] is true, so the response is
+## instantaneous on click.
 func _on_click(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
 		if event.pressed :
