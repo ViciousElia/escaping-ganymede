@@ -6,8 +6,7 @@ extends VBoxContainer
 ## an abstract minimap that serves as a way to navigate for both visible and
 ## non-visible exits, so long as they are active.
 
-## Import of the [AbstractExit] class for use in
-## [method NavigationMap.rebuild_map]
+## Import of the [AbstractExit] class for use in [method rebuild_map]
 var abstr_ext = load("res://interfaces/abstract_exit.tscn")
 
 ## Uniform exit size to be passed around as necessary. Used to assure that
@@ -18,7 +17,7 @@ const EXIT_SIZE = Vector2(16,16)
 
 ## Emitted when an [AbstractExit] is clicked. Serves as a pass-through event
 ## to allow [ScreenInterface] to handle the next steps. Passes whether
-## [member NavigationMap.MoveCommand] is pressed.
+## [member MoveCommand] is pressed.
 signal exit_clicked(move_pressed : bool,exit_node : ExitsNode,abst_node : AbstractExit)
 
 func _ready() : pass
@@ -45,7 +44,6 @@ func _on_resized():
 		child.position.x = child.up_left.x * refSize.x - EXIT_SIZE.x
 		child.position.y = child.up_left.y * refSize.y - EXIT_SIZE.y
 
-## Pass-through method for clicked exits. Assigned from
-## [method NavigationMap.rebuild_map].
+## Pass-through method for clicked exits. Assigned from [method rebuild_map].
 func pass_click(exit_node : ExitsNode,abst_node : AbstractExit) :
 	exit_clicked.emit($MoveCommand.button_pressed,exit_node,abst_node)

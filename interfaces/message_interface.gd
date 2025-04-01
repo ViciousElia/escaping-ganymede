@@ -3,32 +3,28 @@ extends PanelContainer
 ## Container for displaying queued text and saving text in a history buffer.
 ##
 ## Default message interface for displaying text to the player. Contains methods
-## for displaying immediate, progressive, or flash text with
-## [member MessageInterface.delay]. Newly queued text may be set to any of these
-## modes, or advancing text may be sped up once for flash or again for instant.
-## In the context of this class, "flash" refers to the text appearing one character
-## per frame.[br][br]
+## for displaying immediate, progressive, or flash text with [member delay].
+## Newly queued text may be set to any of these modes, or advancing text may be
+## sped up once for flash or again for instant. In the context of this class,
+## "flash" refers to the text appearing one character per frame.[br][br]
 ## Currently, three formatting tags and two commands are recognised. They are
 ## [code][[pause]][/code], [code][[wait]][/code], [code][i][/code],
 ## [code][b][/code], and [code][s][/code]. All other commands and tags may still
 ## work, but their behaviour is not directly predictable. Future versions will
 ## explicitly disallow unsupported tags, causing them to display verbatim.
 
-## Emitted when two flags are met: [member MessageInterface.waited] has been
-## switched from [code]true[/code] to [code]false[/code] [b]and[/b]
-## [member MessageInterface.message_progress] is greater than the length of the
-## current message.
+## Emitted when two flags are met: [member waited] has been switched from
+## [code]true[/code] to [code]false[/code] [b]and[/b] [member message_progress]
+## is greater than the length of the current message.
 signal cleared_message()
 
 ## Array of the last 256 messages to be queued. May be used as a sort of messaging
 ## log if desired.
 var message_history : Array[String] = []
 ## Time in seconds before the next character should be displayed. This value should
-## only be set as a queue operation [method MessageInterface.queue_text] or
-## [method MessageInterface.flash_text], or as an update operation via
-## [method MessageInterface.rush_text] or [method MessageInterface.instant_text].[br][br]
-## This is reset to zero as part of the [signal MessageInterface.cleared_message]
-## sequence.
+## only be set as a queue operation [method queue_text] or [method flash_text],
+## or as an update operation via [method rush_text] or [method instant_text].[br][br]
+## This is reset to zero as part of the [signal cleared_message] sequence.
 var delay : int = 0
 ## Flag to indicate that a message should be in progress. Technically this is
 ## superfluous, but it serves a good point when determining how to progress from
@@ -39,8 +35,8 @@ var queued : bool = false
 var active : bool = false
 ## Flag to indicated that progress is on hold until user input, which is currently
 ## not listened for, but will be in a later update. In addition, the flag may
-## be cleared manually using [method MessageInterface.advance], which will be how
-## [ScreenInterface] interacts with [code]waited[/code] messages.
+## be cleared manually using [method advance], which will be how [ScreenInterface]
+## interacts with [code]waited[/code] messages.
 var waited : bool = false
 ## Symbol(s) to display while text is [code]waited[/code]. Not used when
 ## [code]active[/code] is [code]false[/code].
@@ -54,7 +50,7 @@ var message_progress : int = -1
 ## value after each value. Counts time in milliseconds.
 var adhoc_timer : int = -1
 
-## Time in milliseconds for [member MessageInterface.blinker] to (dis)appear
+## Time in milliseconds for [member blinker] to (dis)appear
 const BLINK : int = 500
 ## Time in milliseconds for pauses caused by [code][[pause]][/code] signals
 const PAUSE : int = 750
@@ -129,11 +125,10 @@ func _process(delta: float) :
 	adhoc_timer = adhoc_timer - int(delta * 1000)
 	pass
 
-## Adds new text to [member MessageInterface.message_history], which saves the
-## most recent 256 messages the player has seen. These are cleared when the
-## game is exited in order to prevent wasted space in saved games. In addition
-## the [member MessageInterface.queued] and [member MessageInterface.active]
-## flags are set, and [member MessageInterface.delay] is configured.
+## Adds new text to [member message_history], which saves the most recent 256
+## messages the player has seen. These are cleared when the game is exited in order
+## to prevent wasted space in saved games. In addition the [member queued] and
+## [member active] flags are set, and [member delay] is configured.
 func queue_text(text : String,localDelay : float = 0.0625) :
 	if message_history.size() == 256 : message_history.pop_front()
 	queued = true
@@ -143,11 +138,11 @@ func queue_text(text : String,localDelay : float = 0.0625) :
 	message_history.push_back(text)
 	message_progress = 0
 
-## Adds new text to [member MessageInterface.message_history], which saves the
-## most recent 256 messages the player has seen. These are cleared when the
-## game is exited in order to prevent wasted space in saved games. In addition
-## the [member MessageInterface.queued] and [member MessageInterface.active]
-## flags are set, and [member MessageInterface.delay] is set to zero.
+## Adds new text to [member message_history], which saves the most recent 256
+## messages the player has seen. These are cleared when the game is exited in order
+## to prevent wasted space in saved games. In addition the [member queued] and
+## [member active] flags are set, and [member delay] is set to zero.[br][br]
+## Short-hand for [code]queue_text(text,0)[/code]
 func flash_text(text : String) :
 	if message_history.size() == 256 : message_history.pop_front()
 	queued = true
@@ -157,14 +152,12 @@ func flash_text(text : String) :
 	message_history.push_back(text)
 	message_progress = 0
 
-## Sets [member MessageInterface.waited] flag and configures
-## [member MessageInterface.blinker] as a symbol to blink at the end of the
-## currently displayed text. While waiting, the blinker will blink at a rate set
-## in [member MessageInterface.BLINK]. Upon a GUI input,
-## [method MessageInterface.advance] is called.
+## Sets [member waited] flag and configures [member blinker] as a symbol to blink
+## at the end of the currently displayed text. While waiting, the blinker will blink
+## at a rate set in [constant BLINK]. Upon a GUI input, [method advance] is called.
 func wait_text(localBlinker : String = "->") :
 	waited = true
-	blinker = localBlinker
+	blinker = "[right]"+localBlinker+"[/right]"
 
 ## Sets text to advance frame-by-frame.
 func rush_text() : set_deferred("delay",0)
@@ -185,3 +178,12 @@ func advance() :
 			cleared_message.emit()
 	else :
 		pass
+
+## Listener for input events. If [code]waited[/code], then [method advance] is
+## called. If not [code]waited[/code], progressively speeds up text from current
+## [member delay] to 0, from 0 to -1.
+func _on_gui_input(event: InputEvent) -> void:
+	if waited : advance()
+	elif !active : active = true
+	elif delay > 0 : rush_text()
+	elif delay == 0 : instant_text()

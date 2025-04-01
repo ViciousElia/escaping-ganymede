@@ -13,3 +13,5 @@ script = ExtResource("1_v4ie7")
 [node name="RichText" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
