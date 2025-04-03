@@ -98,7 +98,7 @@ func _process(delta: float) :
 				else:
 					
 					pass
-				pass # TODO : figure out how to advance text until it's full
+				pass # TODO : figure out how to advance text until it's done
 			else :
 				if _adhoc_timer <= 0 :
 					nextChar = true

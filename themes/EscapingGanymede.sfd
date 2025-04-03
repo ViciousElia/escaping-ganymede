@@ -22,7 +22,7 @@ OS2Version: 4
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1608844006
-ModificationTime: 1743467453
+ModificationTime: 1743654971
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -89,7 +89,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 16 16 4
+WinInfo: 0 16 4
 BeginChars: 65537 257
 
 StartChar: .notdef
@@ -191,14 +191,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0002
@@ -207,14 +199,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0003
@@ -223,14 +207,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0004
@@ -239,14 +215,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0005
@@ -255,14 +223,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0006
@@ -271,14 +231,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0007
@@ -287,14 +239,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0008
@@ -303,14 +247,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0009
@@ -335,14 +271,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni000C
@@ -351,14 +279,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni000E
@@ -367,14 +287,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni000F
@@ -383,14 +295,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0010
@@ -399,14 +303,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0011
@@ -415,14 +311,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0012
@@ -431,14 +319,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0013
@@ -447,14 +327,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0014
@@ -463,14 +335,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0015
@@ -479,14 +343,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0016
@@ -495,14 +351,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0017
@@ -511,14 +359,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0018
@@ -527,14 +367,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0019
@@ -543,14 +375,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001A
@@ -559,14 +383,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001B
@@ -575,14 +391,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001C
@@ -591,14 +399,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001D
@@ -607,14 +407,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001E
@@ -623,14 +415,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni001F
@@ -639,14 +423,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: space
@@ -802,17 +578,17 @@ LayerCount: 2
 Fore
 SplineSet
 320 0 m 1,0,-1
- 480 0 l 1,1,-1
- 480 -160 l 1,2,-1
- 640 -160 l 1,3,-1
- 640 0 l 1,4,-1
- 480 0 l 1,5,-1
+ 320 640 l 1,1,-1
+ 480 640 l 1,2,-1
+ 480 800 l 1,3,-1
+ 640 800 l 1,4,-1
+ 640 640 l 1,5,-1
  480 640 l 1,6,-1
- 640 640 l 1,7,-1
- 640 800 l 1,8,-1
- 480 800 l 1,9,-1
- 480 640 l 1,10,-1
- 320 640 l 1,11,-1
+ 480 0 l 1,7,-1
+ 640 0 l 1,8,-1
+ 640 -160 l 1,9,-1
+ 480 -160 l 1,10,-1
+ 480 0 l 1,11,-1
  320 0 l 1,0,-1
 EndSplineSet
 EndChar
@@ -826,17 +602,17 @@ LayerCount: 2
 Fore
 SplineSet
 640 640 m 1,0,-1
- 480 640 l 1,1,-1
- 480 800 l 1,2,-1
- 320 800 l 1,3,-1
- 320 640 l 1,4,-1
- 480 640 l 1,5,-1
+ 640 0 l 1,1,-1
+ 480 0 l 1,2,-1
+ 480 -160 l 1,3,-1
+ 320 -160 l 1,4,-1
+ 320 0 l 1,5,-1
  480 0 l 1,6,-1
- 320 0 l 1,7,-1
- 320 -160 l 1,8,-1
- 480 -160 l 1,9,-1
- 480 0 l 1,10,-1
- 640 0 l 1,11,-1
+ 480 640 l 1,7,-1
+ 320 640 l 1,8,-1
+ 320 800 l 1,9,-1
+ 480 800 l 1,10,-1
+ 480 640 l 1,11,-1
  640 640 l 1,0,-1
 EndSplineSet
 EndChar
@@ -1317,11 +1093,27 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
+160 320 m 5,0,-1
+ 160 480 l 1,1,-1
+ 320 480 l 1,2,-1
+ 320 640 l 1,3,-1
+ 480 640 l 1,4,-1
+ 480 800 l 1,5,-1
+ 640 800 l 1,6,-1
+ 640 640 l 1,7,-1
+ 480 640 l 1,8,-1
+ 480 480 l 1,9,-1
+ 320 480 l 1,10,-1
+ 320 320 l 1,11,-1
+ 480 320 l 1,12,-1
+ 480 160 l 1,13,-1
+ 640 160 l 1,14,-1
+ 640 0 l 1,15,-1
+ 480 0 l 1,16,-1
+ 480 160 l 1,17,-1
+ 320 160 l 1,18,-1
+ 320 320 l 1,19,-1
+ 160 320 l 5,0,-1
 EndSplineSet
 EndChar
 
@@ -1354,11 +1146,27 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
+640 480 m 1,0,-1
+ 640 320 l 1,1,-1
+ 480 320 l 1,2,-1
+ 480 160 l 1,3,-1
+ 320 160 l 1,4,-1
+ 320 0 l 1,5,-1
+ 160 0 l 1,6,-1
+ 160 160 l 1,7,-1
+ 320 160 l 1,8,-1
+ 320 320 l 1,9,-1
+ 480 320 l 1,10,-1
+ 480 480 l 1,11,-1
+ 320 480 l 1,12,-1
+ 320 640 l 1,13,-1
+ 160 640 l 1,14,-1
+ 160 800 l 1,15,-1
+ 320 800 l 1,16,-1
+ 320 640 l 1,17,-1
+ 480 640 l 1,18,-1
+ 480 480 l 1,19,-1
+ 640 480 l 1,0,-1
 EndSplineSet
 EndChar
 
@@ -3167,14 +2975,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: uni0080
@@ -3695,14 +3495,6 @@ Width: 960
 GlyphClass: 1
 Flags: W
 LayerCount: 2
-Fore
-SplineSet
-851 99 m 1,0,-1
- 851 -54 l 1,1,-1
- 143 -54 l 1,2,-1
- 143 99 l 1,3,-1
- 851 99 l 1,0,-1
-EndSplineSet
 EndChar
 
 StartChar: exclamdown
