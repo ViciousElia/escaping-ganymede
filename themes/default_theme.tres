@@ -4,7 +4,7 @@
 
 [resource]
 default_font = ExtResource("1_mlkpy")
-default_font_size = 14
+default_font_size = 16
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16
