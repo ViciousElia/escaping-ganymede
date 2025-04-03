@@ -51,15 +51,31 @@ var _message_progress : int = -1
 ## value after each value. Counts time in milliseconds.
 var _adhoc_timer : int = -1
 
+var _clearing : bool = false
+var _lines : Array[int] = []
+@export var line_size : Vector2i
+@export var char_size : Vector2i
+
 ## Time in milliseconds for [member _blinker] to (dis)appear
 const _BLINK : int = 500
 ## Time in milliseconds for pauses caused by [code][[pause]][/code] signals
 const _PAUSE : int = 750
+const _CLEAR : int = 125
 
-func _ready() : queue_text("This is some[[pause]] text [[ for [b]testing [i]the [s]features") # pass #
+func _ready() : pass
+	#queue_text("123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890") # pass #
+	#queue_text("This is some[[pause]] text [[ for [b]testing [i]the [s]features") # pass #
 func _process(delta: float) :
 	if !visible : return
-	if _waited :
+	if _clearing :
+		if _adhoc_timer <= 0 : 
+			_adhoc_timer = _CLEAR
+			$RichText.text = $RichText.text.substr(_lines[0])
+			_lines.pop_front()
+			if _lines.is_empty() :
+				_clearing = false
+				advance()
+	elif _waited :
 		if _adhoc_timer <= 0 :
 			_adhoc_timer = _BLINK
 			if $RichText.text.ends_with(_blinker) : $RichText.text = $RichText.text.trim_suffix(_blinker)
@@ -70,6 +86,18 @@ func _process(delta: float) :
 			if _delay == 0 :
 				nextChar = true
 			elif _delay < 0 :
+				var currentString = message_history[_current_message].replace("[[pause]]","").replace("[[wait]]","")
+				var maxLength = line_size.x * (line_size.y - 2)
+				var fullStrip = currentString.replace("[b]","").replace("[/b]","").replace("[i]","").replace("[/i]","").replace("[s]","").replace("[/s]","")
+				if fullStrip.length() < maxLength :
+					_message_progress = currentString.length() + 1
+					$RichText.text = currentString
+					_lines.push_back($RichText.text.length())
+					_queued = false
+					_wait_text()
+				else:
+					
+					pass
 				pass # TODO : figure out how to advance text until it's full
 			else :
 				if _adhoc_timer <= 0 :
@@ -87,13 +115,15 @@ func _process(delta: float) :
 							var commandText = currentString.substr(_message_progress,closeTag+2-_message_progress)
 							match commandText :
 								"[[pause]]" :
+									_message_progress += 9
 									isCommand = true
 									_active = false
 									_adhoc_timer = _PAUSE
-									_message_progress += 9
 								"[[wait]]" :
-									isCommand = true
 									_message_progress += 8
+									isCommand = true
+									var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
+									_lines.push_back($RichText.text.length()-lines_length)
 									_wait_text()
 								_: nextChunk = currentString[_message_progress]
 						else : nextChunk = currentString[_message_progress]
@@ -112,8 +142,19 @@ func _process(delta: float) :
 				if !isCommand :
 					$RichText.text += nextChunk
 					_message_progress += 1
-					if _message_progress >= currentString.length() : _wait_text()
-				pass # TODO : identify when the buffer is full
+					if _message_progress >= currentString.length() :
+						var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
+						_lines.push_back($RichText.text.length()-lines_length)
+						_wait_text()
+					var reducedText = $RichText.text.replace("[b]","").replace("[/b]","").replace("[i]","").replace("[/i]","").replace("[s]","").replace("[/s]","")
+					var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
+					if reducedText.length() - lines_length > line_size.x :
+						var lastSpace = $RichText.text.rfind(" ")
+						if reducedText.length() - lastSpace > line_size.x : _lines.push_back(line_size.x)
+						elif lastSpace > 0 : _lines.push_back(lastSpace - lines_length)
+					if _lines.size()+2 >= line_size.y :
+						_lines.push_back(reducedText.length() - lines_length - _lines[-1])
+						_wait_text()
 		elif _adhoc_timer <= 0 : _active = true
 	else :
 		_delay = 0
@@ -144,14 +185,12 @@ func queue_text(text : String,local_delay : float = 0.0625) :
 ## to prevent wasted space in saved games. In addition the [member _queued] and
 ## [member _active] flags are set, and [member _delay] is set to zero.[br][br]
 ## Short-hand for [code]queue_text(text,0)[/code]
-func flash_text(text : String) :
-	if message_history.size() == 256 : message_history.pop_front()
-	_queued = true
-	_active = true
-	_delay = 0
-	_current_message = message_history.size()
-	message_history.push_back(text)
-	_message_progress = 0
+func flash_text(text : String) : queue_text(text,0)
+
+## Sets text to advance frame-by-frame.
+func _rush_text() : set_deferred("_delay",0)
+## Sets text to display instantly.
+func _instant_text() : set_deferred("_delay",-1)
 
 ## Sets [member _waited] flag and configures [member _blinker] as a symbol to blink
 ## at the end of the currently displayed text. While waiting, the blinker will blink
@@ -160,25 +199,25 @@ func _wait_text(local_blinker : String = "->") :
 	_waited = true
 	_blinker = "[right]"+local_blinker+"[/right]"
 
-## Sets text to advance frame-by-frame.
-func _rush_text() : set_deferred("_delay",0)
-## Sets text to display instantly.
-func _instant_text() : set_deferred("_delay",-1)
-
 ## Advances text from a wait state. Checks if the message is finished displaying
 ## and signals [ScreenInterface] that it's time to clear the [MessageInterface].
 ## This is public to allow external objects to unpause waiting or speed up text
 ## but should be used sparingly.
 func advance() :
+	if _clearing : return
 	if _waited :
-		_waited = false
-		## TODO : clear visible lines ... somehow
+		if !_lines.is_empty() :
+			_clearing = true
+			return
+		# clear blinker, if necessary
+		if $RichText.text.ends_with(_blinker) : $RichText.text = $RichText.text.trim_suffix(_blinker)
 		if _message_progress >= message_history[_current_message].length() :
 			_delay = 0
 			_queued = false
 			_active = false
 			_waited = false
 			cleared_message.emit()
+		_waited = false
 	elif !_active : _active = true
 	elif _delay > 0 : _rush_text()
 	elif _delay == 0 : _instant_text()
@@ -188,6 +227,8 @@ func advance() :
 ## [member _delay] to 0, from 0 to -1.
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion : return
+	if event is InputEventMouseButton and !event.pressed : return
+	if event is InputEventKey and !event.pressed : return
 	if _waited : advance()
 	elif !_active : _active = true
 	elif _delay > 0 : _rush_text()

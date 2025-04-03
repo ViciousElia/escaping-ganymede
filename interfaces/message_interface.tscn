@@ -8,10 +8,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 script = ExtResource("1_v4ie7")
+line_size = Vector2i(53, 32)
+char_size = Vector2i(12, 14)
 
 [node name="RichText" type="RichTextLabel" parent="."]
 layout_mode = 2
+mouse_filter = 1
 bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

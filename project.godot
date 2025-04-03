@@ -22,7 +22,6 @@ window/size/viewport_height=480
 [gui]
 
 theme/custom="uid://bn26cd3acqn2o"
-theme/custom_font="uid://dhc3xeigmoel0"
 
 [rendering]
 
