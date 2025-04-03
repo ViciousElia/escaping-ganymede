@@ -1,5 +1,5 @@
 class_name NavigationMap
-extends VBoxContainer
+extends Control
 ## Screen region that controls the in-game navigation map.
 ##
 ## Includes the move command, which enables the primary navigation method, and

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3diqigng61qk"]
+
+[ext_resource type="ButtonGroup" uid="uid://d12358eehbid3" path="res://interfaces/command_button_group.tres" id="1_px2gs"]
+[ext_resource type="ButtonGroup" uid="uid://cayfb41oq7vbm" path="res://interfaces/inventory_button_group.tres" id="2_gp1p6"]
+
+[node name="CommandsInterface" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ActionCommands" type="HFlowContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MoveCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+size_flags_horizontal = 4
+button_group = ExtResource("1_px2gs")
+text = "Move"
+
+[node name="Separator1" type="VSeparator" parent="ActionCommands"]
+layout_mode = 2
+
+[node name="ExamineCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Examine"
+
+[node name="TakeCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Take"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SpecialCommands" type="HFlowContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="SelfCommand" type="CheckBox" parent="SpecialCommands"]
+layout_mode = 2
+button_group = ExtResource("2_gp1p6")
+text = "Self"
