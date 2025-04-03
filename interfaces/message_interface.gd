@@ -142,16 +142,16 @@ func _process(delta: float) :
 				if !isCommand :
 					$RichText.text += nextChunk
 					_message_progress += 1
+					var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
 					if _message_progress >= currentString.length() :
-						var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
 						_lines.push_back($RichText.text.length()-lines_length)
 						_wait_text()
 					var reducedText = $RichText.text.replace("[b]","").replace("[/b]","").replace("[i]","").replace("[/i]","").replace("[s]","").replace("[/s]","")
-					var lines_length = _lines.reduce(func(accum,number):return accum+number,0)
 					if reducedText.length() - lines_length > line_size.x :
 						var lastSpace = $RichText.text.rfind(" ")
 						if reducedText.length() - lastSpace > line_size.x : _lines.push_back(line_size.x)
 						elif lastSpace > 0 : _lines.push_back(lastSpace - lines_length)
+						# TODO : I think this might break for words spanning two lines in the midst of shorter words
 					if _lines.size()+2 >= line_size.y :
 						_lines.push_back(reducedText.length() - lines_length - _lines[-1])
 						_wait_text()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3diqigng61qk"]
+[gd_scene load_steps=4 format=3 uid="uid://d3diqigng61qk"]
 
 [ext_resource type="ButtonGroup" uid="uid://d12358eehbid3" path="res://interfaces/command_button_group.tres" id="1_px2gs"]
 [ext_resource type="ButtonGroup" uid="uid://cayfb41oq7vbm" path="res://interfaces/inventory_button_group.tres" id="2_gp1p6"]
+[ext_resource type="ButtonGroup" uid="uid://nh4ya0gsjrxd" path="res://interfaces/save_button_group.tres" id="3_dyv5x"]
 
 [node name="CommandsInterface" type="VBoxContainer"]
 anchors_preset = 15
@@ -10,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ActionCommands" type="HFlowContainer" parent="."]
 layout_mode = 2
@@ -22,20 +27,47 @@ size_flags_horizontal = 4
 button_group = ExtResource("1_px2gs")
 text = "Move"
 
-[node name="Separator1" type="VSeparator" parent="ActionCommands"]
-layout_mode = 2
-
-[node name="ExamineCommand" type="CheckBox" parent="ActionCommands"]
+[node name="OpenCommand" type="CheckBox" parent="ActionCommands"]
 layout_mode = 2
 button_group = ExtResource("1_px2gs")
-text = "Examine"
+text = "Open"
+
+[node name="CloseCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Close"
+
+[node name="HitCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Hit"
 
 [node name="TakeCommand" type="CheckBox" parent="ActionCommands"]
 layout_mode = 2
 button_group = ExtResource("1_px2gs")
 text = "Take"
 
-[node name="Control" type="Control" parent="."]
+[node name="UseCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Use"
+
+[node name="DropCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Drop"
+
+[node name="ExamineCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Examine"
+
+[node name="InteractCommand" type="CheckBox" parent="ActionCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Interact"
+
+[node name="Control1" type="Control" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -47,3 +79,22 @@ alignment = 1
 layout_mode = 2
 button_group = ExtResource("2_gp1p6")
 text = "Self"
+
+[node name="SpeakCommand" type="CheckBox" parent="SpecialCommands"]
+layout_mode = 2
+button_group = ExtResource("1_px2gs")
+text = "Speak"
+
+[node name="VSeparator" type="VSeparator" parent="SpecialCommands"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Save_Load" type="CheckBox" parent="SpecialCommands"]
+layout_mode = 2
+button_group = ExtResource("3_dyv5x")
+text = "Save/Load"
+flat = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3

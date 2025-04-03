@@ -10,6 +10,14 @@ var side_panel
 var menu_panel
 var message_panel
 
+var cursors = {
+	"navigation" : load("res://themes/cursors/cursor_brown.png"),
+	"interaction" : load("res://themes/cursors/cursor_green.png"),
+	"agression" : load("res://themes/cursors/cursor_red.png"),
+	"Understanding" : load("res://themes/cursors/cursor_yellow.png")
+}
+# EXAMPLE : Input.set_custom_mouse_cursor(arrow)
+
 var flags : Array[String]
 
 func _ready() -> void:

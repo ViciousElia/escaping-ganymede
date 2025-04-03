@@ -40,7 +40,6 @@ dragging_enabled = false
 [node name="NavigationMap" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit" instance=ExtResource("2_5k30o")]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-size_flags_horizontal = 1
 
 [node name="CommandsInterface" parent="MarginAllowance/MainSplit/LeftSplit/MenuSplit" instance=ExtResource("3_ej2jt")]
 layout_mode = 2
