@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cmuwlpj5t3p0w" path="res://rooms/backgrounds/room_001.png" id="1_8od7w"]
 
-[node name="Room001" type="TextureRect"]
+[node name="Room001" type="AspectRatioContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,13 +10,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+ratio = 1.5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
 texture = ExtResource("1_8od7w")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="Exits" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2

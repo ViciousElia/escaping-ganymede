@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://2c2wft1bvg6t"]
+[gd_scene load_steps=6 format=3 uid="uid://2c2wft1bvg6t"]
 
 [ext_resource type="Script" uid="uid://cerxqualk3c43" path="res://interfaces/screen_interface.gd" id="1_8mo7j"]
+[ext_resource type="PackedScene" uid="uid://b871ngftsb68c" path="res://interfaces/room_interface.tscn" id="2_2y1bu"]
 [ext_resource type="PackedScene" uid="uid://dkoobwcotbio2" path="res://interfaces/navigation_map.tscn" id="2_5k30o"]
 [ext_resource type="PackedScene" uid="uid://bym4sc65ygybp" path="res://interfaces/message_interface.tscn" id="3_4ruwl"]
 [ext_resource type="PackedScene" uid="uid://d3diqigng61qk" path="res://interfaces/commands_interface.tscn" id="3_ej2jt"]
@@ -28,9 +29,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 dragging_enabled = false
 
-[node name="Control" type="PanelContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
+[node name="RoomInterface" parent="MarginAllowance/MainSplit/LeftSplit" instance=ExtResource("2_2y1bu")]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="MenuSplit" type="HSplitContainer" parent="MarginAllowance/MainSplit/LeftSplit"]
 custom_minimum_size = Vector2(0, 120)
