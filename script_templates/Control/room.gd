@@ -7,6 +7,7 @@ signal item_clicked(who : ItemsNode)
 func _ready():
 	# TODO : Check global flags [template task]
 	# TODO : Adjust room based on global flags
+	# TODO : Send exits information to ScreenInterface [template task] [may need to be in RoomInterface]
 
 	for node in $Structures.get_children() : node.connect("clicked",_on_structure_clicked)
 	for node in $Exits.get_children() : node.connect("clicked",_on_exit_clicked)

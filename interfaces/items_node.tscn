@@ -5,4 +5,11 @@
 [node name="ItemsNode" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
 script = ExtResource("1_37g8m")
+
+[node name="ItemShape" type="Area2D" parent="."]
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="input_event" from="ItemShape" to="." method="_on_shape_input"]
